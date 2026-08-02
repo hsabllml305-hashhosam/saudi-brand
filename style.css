@@ -1,136 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Cairo',sans-serif;
 }
+
 
 body{
-    background:#111;
-    color:#fff;
+    font-family:"Cairo",sans-serif;
+    direction:rtl;
+    background:#fff;
+    color:#3b2115;
 }
 
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+
+/* الهيدر */
+
+header{
+    height:80px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 8%;
-    background:rgba(17,17,17,.9);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+    padding:0 35px;
+    background:#fff;
+    border-bottom:1px solid #eee;
 }
+
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#d4af37;
+    font-size:32px;
+    font-weight:900;
 }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin:0 15px;
-    transition:.3s;
+
+.icons{
+    font-size:30px;
+    color:#6b3c20;
 }
 
-nav a:hover{
-    color:#d4af37;
-}
+
+
+/* الصفحة الرئيسية */
 
 .hero{
-    height:100vh;
+
+    height:520px;
+    background:#faf3eb;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
-    padding:20px;
-    background:linear-gradient(135deg,#111,#222,#111);
+
 }
 
-.hero-content{
-    max-width:700px;
-}
 
 .hero h1{
-    font-size:60px;
-    color:#d4af37;
+
+    font-size:65px;
+    font-weight:900;
     margin-bottom:20px;
+
 }
+
 
 .hero p{
-    font-size:20px;
-    color:#ddd;
+
+    font-size:28px;
+    font-weight:600;
+    color:#806557;
     margin-bottom:35px;
-    line-height:1.8;
+
 }
 
-.buttons{
-    display:flex;
+
+.hero-btn{
+
+    display:inline-flex;
+    align-items:center;
     justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn1,
-.btn2{
+    background:#6b3c20;
+    color:white;
+    padding:18px 45px;
+    border-radius:18px;
+    font-size:22px;
+    font-weight:700;
     text-decoration:none;
-    padding:15px 35px;
-    border-radius:40px;
+
+}
+
+
+
+
+/* المنتجات */
+
+.products{
+
+    padding:70px 50px;
+    min-height:520px;
+
+}
+
+
+.products h2{
+
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:45px;
+
+}
+
+
+.sorting label{
+
+    font-size:22px;
     font-weight:bold;
-    transition:.3s;
+
 }
 
-.btn1{
-    background:#d4af37;
-    color:#111;
+
+select{
+
+    width:100%;
+    height:80px;
+    margin-top:20px;
+    padding:0 25px;
+    border-radius:20px;
+    border:1px solid #c9a875;
+    background:white;
+    color:#3b2115;
+    font-size:22px;
+
 }
 
-.btn2{
-    border:2px solid #d4af37;
-    color:#d4af37;
-}
 
-.btn1:hover,
-.btn2:hover{
-    transform:translateY(-4px);
-}
 
-footer{
-    background:#181818;
+
+/* التواصل */
+
+.contact{
+
     text-align:center;
-    padding:30px;
-    color:#aaa;
+    padding:70px 20px;
+
 }
 
-footer h3{
-    color:#d4af37;
-    margin-bottom:10px;
+
+.contact h2{
+
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:25px;
+
 }
 
-@media(max-width:768px){
 
-.navbar{
-    flex-direction:column;
-    gap:15px;
+.contact p{
+
+    font-size:22px;
+    color:#777;
+    margin-bottom:40px;
+
 }
 
-nav{
+
+
+.contact-buttons{
+
     display:flex;
-    flex-wrap:wrap;
     justify-content:center;
-    gap:10px;
+    gap:25px;
+
 }
+
+
+
+.contact-buttons a{
+
+    width:220px;
+    height:65px;
+    border-radius:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:700;
+
+}
+
+
+
+.whatsapp{
+
+    background:#25D366;
+
+}
+
+
+
+.telegram{
+
+    background:#229ED9;
+
+}
+
+
+
+
+/* للجوال */
+
+@media(max-width:700px){
+
+.logo{
+    font-size:25px;
+}
+
+
+.hero{
+    height:420px;
+}
+
 
 .hero h1{
-    font-size:40px;
+    font-size:50px;
 }
 
+
 .hero p{
-    font-size:17px;
+    font-size:22px;
+}
+
+
+.contact-buttons{
+
+    gap:20px;
+
+}
+
+
+.contact-buttons a{
+
+    width:220px;
+    height:65px;
+    font-size:21px;
+
 }
 
 }
