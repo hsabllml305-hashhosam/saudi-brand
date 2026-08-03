@@ -20,8 +20,29 @@
 </div>
 
 <div class="icons">
-☰　⌕
+<span id="menuBtn">☰</span>
+<span id="searchBtn">⌕</span>
 </div>
+
+<nav id="sideMenu" class="side-menu">
+
+<a href="#">الرئيسية</a>
+
+<a href="#">عطورات فرنسية</a>
+
+<a href="#">عطورات نسائية</a>
+
+<a href="#">عطورات رجالية</a>
+
+<a href="#">عطورات سعودية</a>
+
+<a href="#">عطورات إماراتية</a>
+
+<a href="#">عطورات جنسية</a>
+
+<a href="#">عطور بكجات</a>
+
+</nav>
 
 </header>
 
@@ -37,7 +58,7 @@
 فخامة الاختيار تبدأ من هنا
 </p>
 
-<a href="#" class="hero-btn">
+<a href="#products" class="hero-btn">
 تصفح المنتجات
 </a>
 
@@ -45,7 +66,7 @@
 
 </section>
 
-<section class="products">
+<section id="products" class="products">
 
 <h2>
 المنتجات
@@ -59,25 +80,11 @@
 
 <select>
 
-<option>
-مقترحاتنا
-</option>
-
-<option>
-الأكثر مبيعاً
-</option>
-
-<option>
-الأعلى تقييماً
-</option>
-
-<option>
-الأعلى سعراً
-</option>
-
-<option>
-الأقل سعراً
-</option>
+<option>مقترحاتنا</option>
+<option>الأكثر مبيعاً</option>
+<option>الأعلى تقييماً</option>
+<option>الأعلى سعراً</option>
+<option>الأقل سعراً</option>
 
 </select>
 
@@ -106,3 +113,22 @@
 </a>
 
 </div>
+
+</section>
+
+<script>
+
+const menuBtn=document.getElementById("menuBtn");
+const sideMenu=document.getElementById("sideMenu");
+
+menuBtn.onclick=function(){
+
+sideMenu.classList.toggle("open");
+
+};
+
+</script>
+
+</body>
+
+</html>

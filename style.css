@@ -249,3 +249,49 @@ select{
 }
 
 }
+
+/* القائمة الجانبية */
+
+.side-menu{
+    position:fixed;
+    top:0;
+    right:-280px;
+    width:260px;
+    height:100%;
+    background:#ffffff;
+    box-shadow:-4px 0 15px rgba(0,0,0,.15);
+    transition:.3s;
+    padding-top:90px;
+    z-index:1000;
+}
+
+.side-menu.open{
+    right:0;
+}
+
+.side-menu a{
+    display:block;
+    padding:18px 25px;
+    color:#4b2815;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:700;
+    border-bottom:1px solid #eee;
+    transition:.2s;
+}
+
+.side-menu a:hover{
+    background:#f8f3ee;
+    color:#6b3c20;
+}
+
+.icons{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
+#menuBtn,
+#searchBtn{
+    cursor:pointer;
+}
