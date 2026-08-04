@@ -34,7 +34,7 @@
 
 <a href="#">عطورات للجنسين</a>
 
-<a href="#">عطورات إماراتية</a>
+<a href="#">زيوت عطرية</a>
 
 <a href="#">بخور</a>
 
@@ -45,8 +45,6 @@
 <a href="#">أقمشة</a>
 
 <a href="#">بكجات</a>
-
-<a href="#">زيوت عطرية</a>
 
 </nav>
 
@@ -87,13 +85,9 @@
 <select>
 
 <option>مقترحاتنا</option>
-
 <option>الأكثر مبيعاً</option>
-
-<option>الأعلى مبيعاً</option>
-
+<option>الأعلى تقييماً</option>
 <option>الأعلى سعراً</option>
-
 <option>الأقل سعراً</option>
 
 </select>
@@ -130,13 +124,13 @@
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 
-menuBtn.onclick = function(e) {
+menuBtn.onclick = function(e){
     e.stopPropagation();
     sideMenu.classList.toggle("open");
 };
 
-document.addEventListener("click", function(e) {
-    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+document.addEventListener("click", function(e){
+    if(!sideMenu.contains(e.target) && !menuBtn.contains(e.target)){
         sideMenu.classList.remove("open");
     }
 });
