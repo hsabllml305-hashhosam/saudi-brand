@@ -34,13 +34,19 @@
 
 <a href="#">عطورات رجالية</a>
 
-<a href="#">عطورات سعودية</a>
+<a href="#">عطورات للجنسين</a>
 
 <a href="#">عطورات إماراتية</a>
 
-<a href="#">عطورات جنسية</a>
+<a href="#">بخور</a>
 
-<a href="#">عطور بكجات</a>
+<a href="#">عود</a>
+
+<a href="#">مسك</a>
+
+<a href="#">أقمشة</a>
+
+<a href="#">بكجات</a>
 
 </nav>
 
@@ -81,9 +87,13 @@
 <select>
 
 <option>مقترحاتنا</option>
+
 <option>الأكثر مبيعاً</option>
+
 <option>الأعلى تقييماً</option>
+
 <option>الأعلى سعراً</option>
+
 <option>الأقل سعراً</option>
 
 </select>
@@ -91,7 +101,6 @@
 </div>
 
 </section>
-
 <section class="contact">
 
 <h2>
@@ -117,18 +126,20 @@
 </section>
 
 <script>
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
 
-const menuBtn=document.getElementById("menuBtn");
-const sideMenu=document.getElementById("sideMenu");
-
-menuBtn.onclick=function(){
-
-sideMenu.classList.toggle("open");
-
+menuBtn.onclick = function (e) {
+    e.stopPropagation();
+    sideMenu.classList.toggle("open");
 };
 
+document.addEventListener("click", function (e) {
+    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        sideMenu.classList.remove("open");
+    }
+});
 </script>
 
 </body>
-
 </html>
