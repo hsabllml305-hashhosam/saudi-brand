@@ -6,7 +6,6 @@
     box-sizing:border-box;
 }
 
-
 body{
     font-family:"Cairo",sans-serif;
     direction:rtl;
@@ -14,10 +13,12 @@ body{
     color:#3b2115;
 }
 
-
 /* الهيدر */
 
 header{
+    position:sticky;
+    top:0;
+    z-index:999;
     height:80px;
     display:flex;
     justify-content:space-between;
@@ -27,227 +28,136 @@ header{
     border-bottom:1px solid #eee;
 }
 
-
 .logo{
     font-size:32px;
     font-weight:900;
 }
 
-
 .icons{
+    display:flex;
+    gap:18px;
+    align-items:center;
     font-size:30px;
     color:#6b3c20;
 }
 
-
+#menuBtn,
+#searchBtn{
+    cursor:pointer;
+}
 
 /* الصفحة الرئيسية */
 
 .hero{
-
     height:520px;
     background:#faf3eb;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-
 }
 
-
 .hero h1{
-
     font-size:65px;
     font-weight:900;
     margin-bottom:20px;
-
 }
 
-
 .hero p{
-
     font-size:28px;
     font-weight:600;
     color:#806557;
     margin-bottom:35px;
-
 }
 
-
 .hero-btn{
-
     display:inline-flex;
     align-items:center;
     justify-content:center;
     background:#6b3c20;
-    color:white;
+    color:#fff;
     padding:18px 45px;
     border-radius:18px;
     font-size:22px;
     font-weight:700;
     text-decoration:none;
-
 }
-
-
-
 
 /* المنتجات */
 
 .products{
-
     padding:70px 50px;
     min-height:520px;
-
 }
 
-
 .products h2{
-
     font-size:42px;
     font-weight:900;
     margin-bottom:45px;
-
 }
-
 
 .sorting label{
-
     font-size:22px;
     font-weight:bold;
-
 }
 
-
 select{
-
     width:100%;
     height:80px;
     margin-top:20px;
     padding:0 25px;
     border-radius:20px;
     border:1px solid #c9a875;
-    background:white;
+    background:#fff;
     color:#3b2115;
     font-size:22px;
-
 }
-
-
-
 
 /* التواصل */
 
 .contact{
-
     text-align:center;
     padding:70px 20px;
-
 }
 
-
 .contact h2{
-
     font-size:42px;
     font-weight:900;
     margin-bottom:25px;
-
 }
 
-
 .contact p{
-
     font-size:22px;
     color:#777;
     margin-bottom:40px;
-
 }
 
-
-
 .contact-buttons{
-
     display:flex;
     justify-content:center;
     gap:25px;
-
+    flex-wrap:wrap;
 }
 
-
-
 .contact-buttons a{
-
     width:220px;
     height:65px;
     border-radius:40px;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-size:22px;
     font-weight:700;
-
 }
-
-
 
 .whatsapp{
-
     background:#25D366;
-
 }
-
-
 
 .telegram{
-
     background:#229ED9;
-
-}
-
-
-
-
-/* للجوال */
-
-@media(max-width:700px){
-
-.logo{
-    font-size:25px;
-}
-
-
-.hero{
-    height:420px;
-}
-
-
-.hero h1{
-    font-size:50px;
-}
-
-
-.hero p{
-    font-size:22px;
-}
-
-
-.contact-buttons{
-
-    gap:20px;
-
-}
-
-
-.contact-buttons a{
-
-    width:220px;
-    height:65px;
-    font-size:21px;
-
-}
-
 }
 
 /* القائمة الجانبية */
@@ -257,11 +167,12 @@ select{
     top:0;
     right:-280px;
     width:260px;
-    height:100%;
-    background:#ffffff;
+    height:100vh;
+    background:#fff;
     box-shadow:-4px 0 15px rgba(0,0,0,.15);
-    transition:.3s;
+    transition:right .3s ease;
     padding-top:90px;
+    overflow-y:auto;
     z-index:1000;
 }
 
@@ -285,13 +196,34 @@ select{
     color:#6b3c20;
 }
 
-.icons{
-    display:flex;
-    gap:18px;
-    align-items:center;
-}
+/* للجوال */
 
-#menuBtn,
-#searchBtn{
-    cursor:pointer;
+@media (max-width:700px){
+
+    .logo{
+        font-size:25px;
+    }
+
+    .hero{
+        height:420px;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero p{
+        font-size:22px;
+    }
+
+    .contact-buttons{
+        gap:20px;
+    }
+
+    .contact-buttons a{
+        width:220px;
+        height:65px;
+        font-size:21px;
+    }
+
 }
