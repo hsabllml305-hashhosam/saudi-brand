@@ -89,13 +89,9 @@
 <select>
 
 <option>مقترحاتنا</option>
-
 <option>الأكثر مبيعاً</option>
-
 <option>الأعلى تقييماً</option>
-
 <option>الأعلى سعراً</option>
-
 <option>الأقل سعراً</option>
 
 </select>
@@ -103,6 +99,7 @@
 </div>
 
 </section>
+
 <section class="contact">
 
 <h2>
@@ -131,13 +128,13 @@
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 
-menuBtn.onclick = function (e) {
+menuBtn.onclick = function(e){
     e.stopPropagation();
     sideMenu.classList.toggle("open");
 };
 
-document.addEventListener("click", function (e) {
-    if (!sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+document.addEventListener("click", function(e){
+    if(!sideMenu.contains(e.target) && !menuBtn.contains(e.target)){
         sideMenu.classList.remove("open");
     }
 });
