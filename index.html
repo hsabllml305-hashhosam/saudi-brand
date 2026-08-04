@@ -48,7 +48,148 @@
 
 <a href="#">بكجات</a>
 
+<a href="#">زيوت عطرية</a<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>براند سعودي</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+براند سعودي
+</div>
+
+<div class="icons">
+<span id="menuBtn">☰</span>
+<span id="searchBtn">⌕</span>
+</div>
+
+<nav id="sideMenu" class="side-menu">
+
+<a href="france.html">عطورات فرنسية</a>
+
+<a href="#">عطورات نسائية</a>
+
+<a href="#">عطورات رجالية</a>
+
+<a href="#">عطورات للجنسين</a>
+
+<a href="#">عطورات إماراتية</a>
+
+<a href="#">بخور</a>
+
+<a href="#">عود</a>
+
+<a href="#">مسك</a>
+
+<a href="#">أقمشة</a>
+
+<a href="#">بكجات</a>
+
 <a href="#">زيوت عطرية</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+براند سعودي
+</h1>
+
+<p>
+فخامة الاختيار تبدأ من هنا
+</p>
+
+<a href="#products" class="hero-btn">
+تصفح المنتجات
+</a>
+
+</div>
+
+</section>
+
+<section id="products" class="products">
+
+<h2>
+المنتجات
+</h2>
+
+<div class="sorting">
+
+<label>
+ترتيب حسب:
+</label>
+
+<select>
+
+<option>مقترحاتنا</option>
+<option>الأكثر مبيعاً</option>
+<option>الأعلى تقييماً</option>
+<option>الأعلى سعراً</option>
+<option>الأقل سعراً</option>
+
+</select>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>
+تواصل معنا
+</h2>
+
+<p>
+للطلب والاستفسار
+</p>
+
+<div class="contact-buttons">
+
+<a class="whatsapp" href="https://wa.me/963935142735" target="_blank">
+💬 WhatsApp
+</a>
+
+<a class="telegram" href="https://t.me/hosamm455" target="_blank">
+💬 Telegram
+</a>
+
+</div>
+
+</section>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+
+menuBtn.onclick = function(e){
+    e.stopPropagation();
+    sideMenu.classList.toggle("open");
+};
+
+document.addEventListener("click", function(e){
+    if(!sideMenu.contains(e.target) && !menuBtn.contains(e.target)){
+        sideMenu.classList.remove("open");
+    }
+});
+</script>
+
+</body>
+</html>
 
 </nav>
 
