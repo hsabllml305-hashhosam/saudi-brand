@@ -230,3 +230,177 @@ select{
     }
 
 }
+/* الأسئلة الشائعة */
+
+.faq{
+    padding:70px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.faq h2{
+    text-align:center;
+    font-size:42px;
+    font-weight:900;
+    margin-bottom:35px;
+    color:#3b2115;
+}
+
+.faq details{
+    background:#faf3eb;
+    border:1px solid #e6d6c7;
+    border-radius:15px;
+    margin-bottom:18px;
+    overflow:hidden;
+}
+
+.faq summary{
+    list-style:none;
+    cursor:pointer;
+    padding:20px;
+    font-size:22px;
+    font-weight:700;
+    color:#6b3c20;
+}
+
+.faq summary::-webkit-details-marker{
+    display:none;
+}
+
+.faq summary::after{
+    content:"+";
+    float:left;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.faq details[open] summary::after{
+    content:"−";
+}
+
+.faq p{
+    padding:0 20px 20px;
+    color:#555;
+    font-size:19px;
+    line-height:2;
+}
+/* ================================
+   أزرار واتساب وتيليجرام العائمة
+   ================================ */
+
+.floating-contact{
+    position:fixed;
+    left:22px;
+    bottom:25px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    z-index:2000;
+}
+
+/* الشكل الأساسي */
+
+.floating-contact a{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+    border:2px solid #d8b98c;
+    box-shadow:
+        0 6px 18px rgba(59,33,21,.25),
+        inset 0 0 0 2px rgba(255,255,255,.12);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* لمعان احترافي */
+
+.floating-contact a::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.22),
+        transparent 45%
+    );
+    top:0;
+    left:0;
+}
+
+/* أيقونات */
+
+.floating-contact svg{
+    width:29px;
+    height:29px;
+    fill:#fff;
+    position:relative;
+    z-index:2;
+}
+
+/* واتساب */
+
+.floating-whatsapp{
+    background:linear-gradient(
+        145deg,
+        #806044,
+        #5b321c
+    );
+}
+
+/* تيليجرام */
+
+.floating-telegram{
+    background:linear-gradient(
+        145deg,
+        #9a7650,
+        #6b4930
+    );
+}
+
+/* تأثير عند لمس الزر */
+
+.floating-contact a:hover{
+    transform:scale(1.10) translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(59,33,21,.35),
+        0 0 0 5px rgba(201,168,117,.15),
+        inset 0 0 0 2px rgba(255,255,255,.18);
+}
+
+/* تأثير الضغط */
+
+.floating-contact a:active{
+    transform:scale(.94);
+}
+
+/* للجوال */
+
+@media(max-width:700px){
+
+    .floating-contact{
+        left:15px;
+        bottom:18px;
+        gap:10px;
+    }
+
+    .floating-contact a{
+        width:53px;
+        height:53px;
+    }
+
+    .floating-contact svg{
+        width:26px;
+        height:26px;
+    }
+
+}
