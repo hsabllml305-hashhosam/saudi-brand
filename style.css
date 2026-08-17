@@ -297,6 +297,10 @@ font-size:22px;
 font-weight:bold;
 }
 
+.sorting + .sorting{
+margin-top:60px;
+}
+
 select{
 width:100%;
 
