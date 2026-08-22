@@ -196,6 +196,271 @@ color:#8a5a44;
 }
 
 
+/* =========================
+   المنتجات
+========================= */
+
+.perfume-products{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:55px;
+
+padding:0 10px;
+
+}
+
+
+/* بطاقة العطر */
+
+.perfume-card{
+
+background:#fffaf5;
+
+border:1px solid #d8c2ad;
+
+border-radius:20px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:0 5px 18px rgba(59,33,21,.08);
+
+max-width:330px;
+
+width:100%;
+
+margin:auto;
+
+}
+
+
+/* صورة العطر */
+
+.perfume-image{
+
+width:100%;
+
+height:280px;
+
+object-fit:contain;
+
+border-radius:15px;
+
+background:#ffffff;
+
+display:block;
+
+margin:auto;
+
+}
+
+
+/* اسم العطر */
+
+.perfume-name{
+
+font-size:23px;
+
+font-weight:900;
+
+color:#3b2115;
+
+margin:18px 0 12px;
+
+}
+
+
+/* السعر */
+
+.perfume-price{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#806557;
+
+margin-bottom:15px;
+
+}
+
+
+/* التحكم بالعدد */
+
+.quantity-box{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+margin:15px 0;
+
+}
+
+.quantity-box button{
+
+width:40px;
+
+height:40px;
+
+border:1px solid #c9a875;
+
+border-radius:10px;
+
+background:#fff;
+
+color:#6b3c20;
+
+font-size:24px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.quantity-box span{
+
+font-size:20px;
+
+font-weight:700;
+
+min-width:30px;
+
+}
+
+
+/* زر أضف إلى السلة */
+
+.add-cart-btn{
+
+width:100%;
+
+padding:14px;
+
+border:0;
+
+border-radius:13px;
+
+background:#6b3c20;
+
+color:#fff;
+
+font-family:"Cairo",sans-serif;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s ease;
+
+}
+
+.add-cart-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+/* رسالة السلة */
+
+.cart-message{
+
+display:none;
+
+margin-top:15px;
+
+padding:12px;
+
+background:#f8f3ee;
+
+border-radius:12px;
+
+color:#6b3c20;
+
+font-size:16px;
+
+font-weight:700;
+
+}
+
+.cart-message.show{
+
+display:block;
+
+}
+
+
+/* =========================
+   زر طلب واتساب الثابت
+========================= */
+
+.whatsapp-order-fixed{
+
+display:none;
+
+position:fixed;
+
+bottom:15px;
+
+left:15px;
+
+right:15px;
+
+height:58px;
+
+background:#25D366;
+
+color:#ffffff;
+
+border-radius:15px;
+
+align-items:center;
+
+justify-content:center;
+
+font-family:"Cairo",sans-serif;
+
+font-size:19px;
+
+font-weight:700;
+
+text-decoration:none;
+
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+z-index:99999;
+
+border:2px solid #ffffff;
+
+}
+
+.whatsapp-order-fixed.show{
+
+display:flex;
+
+}
+
+.whatsapp-order-fixed:hover{
+
+background:#20bd5a;
+
+}
+
+
 /* الهاتف */
 
 @media(max-width:600px){
@@ -240,6 +505,116 @@ font-size:20px;
 
 }
 
+
+/* عطرين بجانب بعض */
+
+.perfume-products{
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+gap:12px;
+
+padding:0;
+
+}
+
+.perfume-card{
+
+max-width:100%;
+
+padding:10px;
+
+border-radius:15px;
+
+}
+
+.perfume-image{
+
+height:180px;
+
+}
+
+.perfume-name{
+
+font-size:16px;
+
+margin:10px 0 7px;
+
+}
+
+.perfume-price{
+
+font-size:14px;
+
+margin-bottom:8px;
+
+}
+
+.quantity-box{
+
+gap:8px;
+
+margin:10px 0;
+
+}
+
+.quantity-box button{
+
+width:32px;
+
+height:32px;
+
+font-size:19px;
+
+}
+
+.quantity-box span{
+
+font-size:17px;
+
+min-width:22px;
+
+}
+
+.add-cart-btn{
+
+padding:10px 5px;
+
+font-size:14px;
+
+border-radius:10px;
+
+}
+
+.cart-message{
+
+font-size:12px;
+
+padding:8px;
+
+margin-top:8px;
+
+}
+
+
+/* زر واتساب فوق شريط التنقل */
+
+.whatsapp-order-fixed{
+
+bottom:12px;
+
+left:12px;
+
+right:12px;
+
+height:55px;
+
+font-size:17px;
+
+border-radius:14px;
+
+}
+
 }
 
 </style>
@@ -265,7 +640,7 @@ font-size:20px;
 <div class="ad-line"></div>
 
 <p>
- لوضع إعلانك هنا تواصل مع خدمة العملاء
+لوضع إعلانك هنا تواصل مع خدمة العملاء
 </p>
 
 </div>
@@ -437,7 +812,7 @@ font-size:20px;
 <select>
 
 <option>
- جميع العطور
+جميع العطور
 </option>
 
 <option>
@@ -461,7 +836,101 @@ font-size:20px;
 </div>
 
 
+<!-- =========================
+     منتجات العطور
+========================= -->
+
+<div class="perfume-products">
+
+
+<div class="perfume-card">
+
+
+<img
+src="https://i.ibb.co/R4SWwgMP/IMG-20260819-WA0013.jpg"
+alt="عطر كليكات"
+class="perfume-image"
+>
+
+
+<div class="perfume-name">
+عطر كليكات
+</div>
+
+
+<div class="perfume-price">
+السعر: 45$ فقط 
+</div>
+
+
+<!-- العدد -->
+
+<div class="quantity-box">
+
+<button
+type="button"
+id="minusBtn">
+−
+</button>
+
+<span id="quantity">
+1
+</span>
+
+<button
+type="button"
+id="plusBtn">
++
+</button>
+
+</div>
+
+
+<!-- إضافة للسلة -->
+
+<button
+type="button"
+class="add-cart-btn"
+id="addCartBtn">
+
+أضف إلى السلة
+
+</button>
+
+
+<!-- رسالة السلة -->
+
+<div
+id="cartMessage"
+class="cart-message">
+
+تمت إضافة العطر إلى السلة ✓
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
 </section>
+
+
+<!-- =========================
+     زر طلب واتساب الثابت
+========================= -->
+
+<a
+id="whatsappOrder"
+class="whatsapp-order-fixed"
+href="#"
+target="_blank">
+
+📱 طلب عبر واتساب
+
+</a>
 
 
 <!-- =========================
@@ -520,10 +989,10 @@ font-size:20px;
 <p>
 
 <a
-href="https://wa.me/+963 935 142 735"
+href="https://wa.me/963935142735"
 target="_blank">
 
-📱+963 935 142 7357
+📱 +963 935 142 735
 
 </a>
 
@@ -595,7 +1064,7 @@ target="_blank">
 <!-- واتساب -->
 
 <a
-href="https://wa.me/+963 935 142 735"
+href="https://wa.me/963935142735"
 class="floating-whatsapp"
 target="_blank"
 aria-label="واتساب">
@@ -894,6 +1363,90 @@ doSearch();
 }
 
 });
+
+
+/* =========================
+   سلة العطر وطلب واتساب
+========================= */
+
+let quantity = 1;
+
+const quantityElement =
+document.getElementById("quantity");
+
+const minusBtn =
+document.getElementById("minusBtn");
+
+const plusBtn =
+document.getElementById("plusBtn");
+
+const addCartBtn =
+document.getElementById("addCartBtn");
+
+const cartMessage =
+document.getElementById("cartMessage");
+
+const whatsappOrder =
+document.getElementById("whatsappOrder");
+
+
+/* زيادة العدد */
+
+plusBtn.onclick = function(){
+
+quantity++;
+
+quantityElement.textContent = quantity;
+
+};
+
+
+/* إنقاص العدد */
+
+minusBtn.onclick = function(){
+
+if(quantity > 1){
+
+quantity--;
+
+quantityElement.textContent = quantity;
+
+}
+
+};
+
+
+/* إضافة إلى السلة */
+
+addCartBtn.onclick = function(){
+
+cartMessage.classList.add("show");
+
+whatsappOrder.classList.add("show");
+
+whatsappOrder.textContent =
+"📱 طلب عبر واتساب";
+
+};
+
+
+/* إنشاء طلب واتساب */
+
+whatsappOrder.onclick = function(){
+
+const productName =
+"عطر كليكات";
+
+const message =
+"السلام عليكم، أريد طلب:%0A%0A" +
+"🧴 المنتج: " + productName + "%0A" +
+"🔢 العدد: " + quantity + "%0A%0A" +
+"أرغب بتأكيد الطلب.";
+
+whatsappOrder.href =
+"https://wa.me/963935142735?text=" + message;
+
+};
 
 
 </script>
