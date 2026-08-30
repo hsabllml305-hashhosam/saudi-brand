@@ -1,772 +1,1172 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  <head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>براند سعودي</title>  <link rel="stylesheet" href="style.css">  <style>  
-  
-/* =========================  
-   صفحة البحث  
-========================= */  
-  
-.search-page{  
-  
-position:fixed;  
-  
-inset:0;  
-  
-z-index:99999;  
-  
-background:#ffffff;  
-  
-display:none;  
-  
-direction:rtl;  
-  
-}  
-  
-.search-page.active{  
-  
-display:block;  
-  
-}  
-  
-  
-/* شريط البحث */  
-  
-.search-top{  
-  
-height:75px;  
-  
-width:100%;  
-  
-display:flex;  
-  
-align-items:center;  
-  
-gap:10px;  
-  
-padding:10px 15px;  
-  
-background:#ffffff;  
-  
-border-bottom:1px solid #eeeeee;  
-  
-box-sizing:border-box;  
-  
-}  
-  
-  
-/* زر الرجوع */  
-  
-.close-search{  
-  
-width:45px;  
-  
-height:45px;  
-  
-border:0;  
-  
-background:transparent;  
-  
-color:#3b2115;  
-  
-font-size:32px;  
-  
-cursor:pointer;  
-  
-display:flex;  
-  
-align-items:center;  
-  
-justify-content:center;  
-  
-}  
-  
-  
-/* مربع البحث */  
-  
-.search-form{  
-  
-flex:1;  
-  
-height:52px;  
-  
-display:flex;  
-  
-align-items:center;  
-  
-background:#f2f2f2;  
-  
-border:1px solid #dddddd;  
-  
-border-radius:28px;  
-  
-overflow:hidden;  
-  
-}  
-  
-  
-/* خانة الكتابة */  
-  
-.search-input{  
-  
-flex:1;  
-  
-height:100%;  
-  
-border:0;  
-  
-outline:none;  
-  
-background:transparent;  
-  
-padding:0 20px;  
-  
-font-size:18px;  
-  
-font-family:inherit;  
-  
-color:#333;  
-  
-direction:rtl;  
-  
-}  
-  
-  
-/* زر العدسة */  
-  
-.search-submit{  
-  
-width:58px;  
-  
-height:100%;  
-  
-border:0;  
-  
-background:#f2f2f2;  
-  
-font-size:22px;  
-  
-cursor:pointer;  
-  
-}  
-  
-  
-/* النتيجة */  
-  
-.search-result{  
-  
-text-align:center;  
-  
-padding:60px 20px;  
-  
-font-size:21px;  
-  
-font-weight:bold;  
-  
-line-height:2;  
-  
-}  
-  
-  
-/* متوفر */  
-  
-.search-success{  
-  
-color:#6b3c20;  
-  
-}  
-  
-  
-/* غير متوفر */  
-  
-.search-error{  
-  
-color:#8a5a44;  
-  
-}  
-  
-  
-/* =========================  
-   المنتجات  
-========================= */  
-  
-.perfume-products{  
-  
-display:grid;  
-  
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));  
-  
-gap:25px;  
-  
-margin-top:55px;  
-  
-padding:0 10px;  
-  
-}  
-  
-  
-/* بطاقة العطر */  
-  
-.perfume-card{  
-  
-background:#fffaf5;  
-  
-border:1px solid #d8c2ad;  
-  
-border-radius:20px;  
-  
-padding:20px;  
-  
-text-align:center;  
-  
-box-shadow:0 5px 18px rgba(59,33,21,.08);  
-  
-max-width:330px;  
-  
-width:100%;  
-  
-margin:auto;  
-  
-}  
-  
-  
-/* صورة العطر */  
-  
-.perfume-image{  
-  
-width:100%;  
-  
-height:280px;  
-  
-object-fit:contain;  
-  
-border-radius:15px;  
-  
-background:#ffffff;  
-  
-display:block;  
-  
-margin:auto;  
-  
-}  
-  
-  
-/* اسم العطر */  
-  
-.perfume-name{  
-  
-font-size:23px;  
-  
-font-weight:900;  
-  
-color:#3b2115;  
-  
-margin:18px 0 12px;  
-  
-}  
-  
-  
-/* السعر */  
-  
-.perfume-price{  
-  
-font-size:20px;  
-  
-font-weight:700;  
-  
-color:#806557;  
-  
-margin-bottom:15px;  
-  
-}  
-  
-  
-/* التحكم بالعدد */  
-  
-.quantity-box{  
-  
-display:flex;  
-  
-align-items:center;  
-  
-justify-content:center;  
-  
-gap:15px;  
-  
-margin:15px 0;  
-  
-}  
-  
-.quantity-box button{  
-  
-width:40px;  
-  
-height:40px;  
-  
-border:1px solid #c9a875;  
-  
-border-radius:10px;  
-  
-background:#fff;  
-  
-color:#6b3c20;  
-  
-font-size:24px;  
-  
-font-weight:bold;  
-  
-cursor:pointer;  
-  
-}  
-  
-.quantity-box span{  
-  
-font-size:20px;  
-  
-font-weight:700;  
-  
-min-width:30px;  
-  
-}  
-  
-  
-/* زر أضف إلى السلة */  
-  
-.add-cart-btn{  
-  
-width:100%;  
-  
-padding:14px;  
-  
-border:0;  
-  
-border-radius:13px;  
-  
-background:#6b3c20;  
-  
-color:#fff;  
-  
-font-family:"Cairo",sans-serif;  
-  
-font-size:18px;  
-  
-font-weight:700;  
-  
-cursor:pointer;  
-  
-transition:.3s ease;  
-  
-}  
-  
-.add-cart-btn:hover{  
-  
-transform:translateY(-2px);  
-  
-}  
-  
-  
-/* رسالة السلة */  
-  
-.cart-message{  
-  
-display:none;  
-  
-margin-top:15px;  
-  
-padding:12px;  
-  
-background:#f8f3ee;  
-  
-border-radius:12px;  
-  
-color:#6b3c20;  
-  
-font-size:16px;  
-  
-font-weight:700;  
-  
-}  
-  
-.cart-message.show{  
-  
-display:block;  
-  
-}  
-  
-  
-/* =========================  
-   زر طلب واتساب الثابت  
-========================= */  
-  
-.whatsapp-order-fixed{  
-  
-display:none;  
-  
-position:fixed;  
-  
-bottom:15px;  
-  
-left:15px;  
-  
-right:15px;  
-  
-height:58px;  
-  
-background:#25D366;  
-  
-color:#ffffff;  
-  
-border-radius:15px;  
-  
-align-items:center;  
-  
-justify-content:center;  
-  
-font-family:"Cairo",sans-serif;  
-  
-font-size:19px;  
-  
-font-weight:700;  
-  
-text-decoration:none;  
-  
-box-shadow:0 5px 20px rgba(0,0,0,.25);  
-  
-z-index:99999;  
-  
-border:2px solid #ffffff;  
-  
-}  
-  
-.whatsapp-order-fixed.show{  
-  
-display:flex;  
-  
-}  
-  
-.whatsapp-order-fixed:hover{  
-  
-background:#20bd5a;  
-  
-}  
-  
-  
-/* الهاتف */  
-  
-@media(max-width:600px){  
-  
-.search-top{  
-  
-height:70px;  
-  
-padding:8px 10px;  
-  
-}  
-  
-.search-form{  
-  
-height:48px;  
-  
-}  
-  
-.search-input{  
-  
-font-size:16px;  
-  
-padding:0 16px;  
-  
-}  
-  
-.close-search{  
-  
-width:40px;  
-  
-height:40px;  
-  
-font-size:29px;  
-  
-}  
-  
-.search-submit{  
-  
-width:50px;  
-  
-font-size:20px;  
-  
-}  
-  
-  
-/* عطرين بجانب بعض */  
-  
-.perfume-products{  
-  
-grid-template-columns:repeat(2,minmax(0,1fr));  
-  
-gap:12px;  
-  
-padding:0;  
-  
-}  
-  
-.perfume-card{  
-  
-max-width:100%;  
-  
-padding:10px;  
-  
-border-radius:15px;  
-  
-}  
-  
-.perfume-image{  
-  
-height:180px;  
-  
-}  
-  
-.perfume-name{  
-  
-font-size:16px;  
-  
-margin:10px 0 7px;  
-  
-}  
-  
-.perfume-price{  
-  
-font-size:14px;  
-  
-margin-bottom:8px;  
-  
-}  
-  
-.quantity-box{  
-  
-gap:8px;  
-  
-margin:10px 0;  
-  
-}  
-  
-.quantity-box button{  
-  
-width:32px;  
-  
-height:32px;  
-  
-font-size:19px;  
-  
-}  
-  
-.quantity-box span{  
-  
-font-size:17px;  
-  
-min-width:22px;  
-  
-}  
-  
-.add-cart-btn{  
-  
-padding:10px 5px;  
-  
-font-size:14px;  
-  
-border-radius:10px;  
-  
-}  
-  
-.cart-message{  
-  
-font-size:12px;  
-  
-padding:8px;  
-  
-margin-top:8px;  
-  
-}  
-  
-  
-/* زر واتساب فوق شريط التنقل */  
-  
-.whatsapp-order-fixed{  
-  
-bottom:12px;  
-  
-left:12px;  
-  
-right:12px;  
-  
-height:55px;  
-  
-font-size:17px;  
-  
-border-radius:14px;  
-  
-}  
-  
-}  
-  
-</style>  </head>  <body>  <!-- =========================  
-     المساحة الإعلانية  
-========================= -->  <section class="ad-section">  <div class="ad-banner">  <h2>  
-مساحة إعلانية  
-</h2>  <div class="ad-line"></div>  <p>  
-لوضع إعلانك هنا تواصل مع خدمة العملاء  
-</p>  </div>  </section>  <!-- =========================  
-     الهيدر  
-========================= -->  <header>  <div class="logo">  
-براند سعودي  
-</div>  <div class="icons">  <span id="menuBtn">  
-☰  
-</span>  <span id="searchBtn">  
-⌕  
-</span>  </div>  <!-- القائمة -->  <nav id="sideMenu" class="side-menu">  <a href="france.html">  
-عطور فرنسية  
-</a>  <a href="#">  
-عطور نسائية  
-</a>  <a href="#">  
-عطور رجالية  
-</a>  <a href="#">  
-عطور للجنسين  
-</a>  <a href="#">  
-زيوت عطرية  
-</a>  <a href="#">  
-بخور  
-</a>  <a href="#">  
-عود  
-</a>  <a href="#">  
-مسك  
-</a>  <a href="#">  
-أقمشة  
-</a>  <a href="#">  
-لوازم رحلات  
-</a>  <a href="#">  
-الإلكترونيات  
-</a>  <a href="index.html">  
-مواقع براند سعودي  
-</a>  </nav>  </header>  <!-- =========================  
-     الصفحة الرئيسية  
-========================= -->  <section class="hero">  <div class="hero-text">  <h1>  
-شذى للعطور  
-</h1>  <p>  
-فخامة الاختيار تبدأ من هنا  
-</p>  <a href="#products" class="hero-btn">  
-تصفح المنتجات  
-</a>  </div>  </section>  <!-- =========================  
-     المنتجات  
-========================= -->  <section id="products" class="products">  <h2>  
-المنتجات  
-</h2>  <div class="sorting">  <label>  
-ترتيب المنتجات حسب:  
-</label>  <select>  <option>  
-مقترحاتنا  
-</option>  <option>  
-الأكثر مبيعاً  
-</option>  <option>  
-الأعلى تقييماً  
-</option>  <option>  
-الأعلى سعراً  
-</option>  <option>  
-الأقل سعراً  
-</option>  </select>  </div>  <!-- =========================  
-     قسم العطور  
-========================= -->  <div class="sorting">  <label>  
-اقسام العطور :  
-</label>  <select>  <option>  
-جميع العطور  
-</option>  <option>  
-عطور رجالية   
-</option>  <option> 
-عطور نسائية  
-</option>  <option>  
-عطور شرقية
-</option>  <option>  
-عطور فرنسية 
-</option>  <option> 
-عود
-</option>  <option> 
-بكج
-</option>  <option> 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>براند سعودي</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================
+   صفحة البحث
+========================= */
+
+.search-page{
+
+position:fixed;
+inset:0;
+z-index:99999;
+
+background:#ffffff;
+
+display:none;
+
+direction:rtl;
+
+}
+
+.search-page.active{
+
+display:block;
+
+}
+
+
+/* شريط البحث */
+
+.search-top{
+
+height:75px;
+width:100%;
+
+display:flex;
+align-items:center;
+
+gap:10px;
+
+padding:10px 15px;
+
+background:#ffffff;
+
+border-bottom:1px solid #eeeeee;
+
+box-sizing:border-box;
+
+}
+
+
+/* زر الرجوع */
+
+.close-search{
+
+width:45px;
+height:45px;
+
+border:0;
+
+background:transparent;
+
+color:#3b2115;
+
+font-size:32px;
+
+cursor:pointer;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+}
+
+
+/* مربع البحث */
+
+.search-form{
+
+flex:1;
+
+height:52px;
+
+display:flex;
+align-items:center;
+
+background:#f2f2f2;
+
+border:1px solid #dddddd;
+
+border-radius:28px;
+
+overflow:hidden;
+
+}
+
+
+/* خانة الكتابة */
+
+.search-input{
+
+flex:1;
+
+height:100%;
+
+border:0;
+
+outline:none;
+
+background:transparent;
+
+padding:0 20px;
+
+font-size:18px;
+
+font-family:inherit;
+
+color:#333;
+
+direction:rtl;
+
+}
+
+
+/* زر العدسة */
+
+.search-submit{
+
+width:58px;
+height:100%;
+
+border:0;
+
+background:#f2f2f2;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+
+/* النتيجة */
+
+.search-result{
+
+text-align:center;
+
+padding:60px 20px;
+
+font-size:21px;
+
+font-weight:bold;
+
+line-height:2;
+
+}
+
+
+/* متوفر */
+
+.search-success{
+
+color:#6b3c20;
+
+}
+
+
+/* غير متوفر */
+
+.search-error{
+
+color:#8a5a44;
+
+}
+
+
+/* =========================
+   المنتجات
+========================= */
+
+.perfume-products{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:55px;
+
+padding:0 10px;
+
+}
+
+
+/* بطاقة العطر */
+
+.perfume-card{
+
+background:#fffaf5;
+
+border:1px solid #d8c2ad;
+
+border-radius:20px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:
+0 5px 18px rgba(59,33,21,.08);
+
+max-width:330px;
+
+width:100%;
+
+margin:auto;
+
+}
+
+
+/* صورة العطر */
+
+.perfume-image{
+
+width:100%;
+
+height:280px;
+
+object-fit:contain;
+
+border-radius:15px;
+
+background:#ffffff;
+
+display:block;
+
+margin:auto;
+
+}
+
+
+/* اسم العطر */
+
+.perfume-name{
+
+font-size:23px;
+
+font-weight:900;
+
+color:#3b2115;
+
+margin:18px 0 12px;
+
+}
+
+
+/* السعر */
+
+.perfume-price{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#806557;
+
+margin-bottom:15px;
+
+}
+
+
+/* التحكم بالعدد */
+
+.quantity-box{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+margin:15px 0;
+
+}
+
+.quantity-box button{
+
+width:40px;
+height:40px;
+
+border:1px solid #c9a875;
+
+border-radius:10px;
+
+background:#fff;
+
+color:#6b3c20;
+
+font-size:24px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
+
+.quantity-box span{
+
+font-size:20px;
+
+font-weight:700;
+
+min-width:30px;
+
+}
+
+
+/* زر أضف إلى السلة */
+
+.add-cart-btn{
+
+width:100%;
+
+padding:14px;
+
+border:0;
+
+border-radius:13px;
+
+background:#6b3c20;
+
+color:#fff;
+
+font-family:"Cairo",sans-serif;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s ease;
+
+}
+
+.add-cart-btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+/* رسالة السلة */
+
+.cart-message{
+
+display:none;
+
+margin-top:15px;
+
+padding:12px;
+
+background:#f8f3ee;
+
+border-radius:12px;
+
+color:#6b3c20;
+
+font-size:16px;
+
+font-weight:700;
+
+}
+
+.cart-message.show{
+
+display:block;
+
+}
+
+
+/* =========================
+   زر طلب واتساب الثابت
+========================= */
+
+.whatsapp-order-fixed{
+
+display:none;
+
+position:fixed;
+
+bottom:15px;
+
+left:15px;
+right:15px;
+
+height:58px;
+
+background:#25D366;
+
+color:#ffffff;
+
+border-radius:15px;
+
+align-items:center;
+justify-content:center;
+
+font-family:"Cairo",sans-serif;
+
+font-size:19px;
+
+font-weight:700;
+
+text-decoration:none;
+
+box-shadow:0 5px 20px rgba(0,0,0,.25);
+
+z-index:99999;
+
+border:2px solid #ffffff;
+
+}
+
+.whatsapp-order-fixed.show{
+
+display:flex;
+
+}
+
+.whatsapp-order-fixed:hover{
+
+background:#20bd5a;
+
+}
+
+
+/* =========================
+   صفحاتنا الرسمية
+========================= */
+
+.official-pages{
+
+padding:70px 20px 90px;
+
+text-align:center;
+
+background:#faf3eb;
+
+}
+
+.official-pages h2{
+
+font-size:40px;
+
+font-weight:900;
+
+color:#3b2115;
+
+margin-bottom:15px;
+
+}
+
+.official-pages p{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#806557;
+
+margin-bottom:35px;
+
+}
+
+.official-links{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.official-link{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+min-width:190px;
+
+padding:14px 25px;
+
+border-radius:15px;
+
+background:#ffffff;
+
+border:2px solid #c9a875;
+
+color:#6b3c20;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:700;
+
+box-shadow:0 5px 15px rgba(59,33,21,.10);
+
+transition:.3s ease;
+
+}
+
+.official-link:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 8px 20px rgba(59,33,21,.16);
+
+}
+
+.official-icon{
+
+font-size:25px;
+
+}
+
+
+/* الهاتف */
+
+@media(max-width:600px){
+
+.search-top{
+
+height:70px;
+
+padding:8px 10px;
+
+}
+
+.search-form{
+
+height:48px;
+
+}
+
+.search-input{
+
+font-size:16px;
+
+padding:0 16px;
+
+}
+
+.close-search{
+
+width:40px;
+
+height:40px;
+
+font-size:29px;
+
+}
+
+.search-submit{
+
+width:50px;
+
+font-size:20px;
+
+}
+
+
+/* عطرين بجانب بعض */
+
+.perfume-products{
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:12px;
+
+padding:0;
+
+}
+
+.perfume-card{
+
+max-width:100%;
+
+padding:10px;
+
+border-radius:15px;
+
+}
+
+.perfume-image{
+
+height:180px;
+
+}
+
+.perfume-name{
+
+font-size:16px;
+
+margin:10px 0 7px;
+
+}
+
+.perfume-price{
+
+font-size:14px;
+
+margin-bottom:8px;
+
+}
+
+.quantity-box{
+
+gap:8px;
+
+margin:10px 0;
+
+}
+
+.quantity-box button{
+
+width:32px;
+
+height:32px;
+
+font-size:19px;
+
+}
+
+.quantity-box span{
+
+font-size:17px;
+
+min-width:22px;
+
+}
+
+.add-cart-btn{
+
+padding:10px 5px;
+
+font-size:14px;
+
+border-radius:10px;
+
+}
+
+.cart-message{
+
+font-size:12px;
+
+padding:8px;
+
+margin-top:8px;
+
+}
+
+
+/* زر واتساب فوق شريط التنقل */
+
+.whatsapp-order-fixed{
+
+bottom:12px;
+
+left:12px;
+right:12px;
+
+height:55px;
+
+font-size:17px;
+
+border-radius:14px;
+
+}
+
+
+/* صفحاتنا الرسمية */
+
+.official-pages{
+
+padding:55px 15px 80px;
+
+}
+
+.official-pages h2{
+
+font-size:32px;
+
+}
+
+.official-pages p{
+
+font-size:16px;
+
+}
+
+.official-links{
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.official-link{
+
+width:100%;
+
+max-width:350px;
+
+font-size:17px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     المساحة الإعلانية
+========================= -->
+
+<section class="ad-section">
+
+<div class="ad-banner">
+
+<h2>
+مساحة إعلانية
+</h2>
+
+<div class="ad-line"></div>
+
+<p>
+لوضع إعلانك هنا تواصل مع خدمة العملاء
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     الهيدر
+========================= -->
+
+<header>
+
+<div class="logo">
+براند سعودي
+</div>
+
+<div class="icons">
+
+<span id="menuBtn">
+☰
+</span>
+
+<span id="searchBtn">
+⌕
+</span>
+
+</div>
+
+
+<!-- القائمة -->
+
+<nav id="sideMenu" class="side-menu">
+
+<a href="france.html">
+عطور فرنسية
+</a>
+
+<a href="#">
+عطور نسائية
+</a>
+
+<a href="#">
+عطور رجالية
+</a>
+
+<a href="#">
 عطور للجنسين
-</option>  </select>  </div>  <!-- =========================  
-     منتجات العطور  
-========================= -->  <div class="perfume-products">  <div class="perfume-card">  <img
+</a>
+
+<a href="#">
+زيوت عطرية
+</a>
+
+<a href="#">
+بخور
+</a>
+
+<a href="#">
+عود
+</a>
+
+<a href="#">
+مسك
+</a>
+
+<a href="#">
+أقمشة
+</a>
+
+<a href="#">
+لوازم رحلات
+</a>
+
+<a href="#">
+الإلكترونيات
+</a>
+
+<a href="index.html">
+مواقع براند سعودي
+</a>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     الصفحة الرئيسية
+========================= -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+شذى للعطور
+</h1>
+
+<p>
+فخامة الاختيار تبدأ من هنا
+</p>
+
+<a href="#products" class="hero-btn">
+تصفح المنتجات
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     المنتجات
+========================= -->
+
+<section id="products" class="products">
+
+<h2>
+المنتجات
+</h2>
+
+
+<div class="sorting">
+
+<label>
+ترتيب المنتجات حسب:
+</label>
+
+<select>
+
+<option>
+مقترحاتنا
+</option>
+
+<option>
+الأكثر مبيعاً
+</option>
+
+<option>
+الأعلى تقييماً
+</option>
+
+<option>
+الأعلى سعراً
+</option>
+
+<option>
+الأقل سعراً
+</option>
+
+</select>
+
+</div>
+
+
+<!-- أقسام العطور -->
+
+<div class="sorting">
+
+<label>
+اقسام العطور :
+</label>
+
+<select>
+
+<option>
+جميع العطور
+</option>
+
+<option>
+عطور رجالية
+</option>
+
+<option>
+عطور نسائية
+</option>
+
+<option>
+عطور شرقية
+</option>
+
+<option>
+عطور فرنسية
+</option>
+
+<option>
+عود
+</option>
+
+<option>
+بكج
+</option>
+
+<option>
+عطور للجنسين
+</option>
+
+</select>
+
+</div>
+
+
+<!-- منتجات العطور -->
+
+<div class="perfume-products">
+
+
+<div class="perfume-card">
+
+<img
 src="https://i.ibb.co/R4SWwgMP/IMG-20260819-WA0013.jpg"
 alt="عطر كليكات"
 class="perfume-image"
+>
 
-> 
 
-<div class="perfume-name">  
-عطر كليكات  
-</div>  <div class="perfume-price">  
-السعر: 45$ فقط   
-</div>  <!-- العدد -->  <div class="quantity-box">  <button  
-type="button"  
+<div class="perfume-name">
+
+عطر كليكات
+
+</div>
+
+
+<div class="perfume-price">
+
+السعر: 45$ فقط
+
+</div>
+
+
+<!-- العدد -->
+
+<div class="quantity-box">
+
+<button
+type="button"
 id="minusBtn">
 −
 </button>
 
-<span id="quantity">  
-1  
-</span>  <button  
-type="button"  
+<span id="quantity">
+1
+</span>
+
+<button
+type="button"
 id="plusBtn">
 +
 </button>
 
-</div>  <!-- إضافة للسلة -->  <button  
-type="button"  
-class="add-cart-btn"  
+</div>
+
+
+<!-- إضافة للسلة -->
+
+<button
+type="button"
+class="add-cart-btn"
 id="addCartBtn">
 
 أضف إلى السلة
 
-</button>  <!-- رسالة السلة -->  <div  
-id="cartMessage"  
-class="cart-message">  تمت إضافة العطر إلى السلة ✓
+</button>
 
-</div>  </div>  </div>  </section>  <!-- =========================  
-     زر طلب واتساب الثابت  
-========================= -->  <a  
-id="whatsappOrder"  
-class="whatsapp-order-fixed"  
-href="#"  
+
+<!-- رسالة السلة -->
+
+<div
+id="cartMessage"
+class="cart-message">
+
+تمت إضافة العطر إلى السلة ✓
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     زر طلب واتساب الثابت
+========================= -->
+
+<a
+id="whatsappOrder"
+class="whatsapp-order-fixed"
+href="#"
 target="_blank">
 
 📱 طلب عبر واتساب
 
-</a>  <!-- =========================  
-     الأسئلة الشائعة  
-========================= -->  <section class="faq">  <h2>  
-الأسئلة الشائعة  
-</h2>  <!-- من نحن -->  <details>  <summary>  
-🌟 من نحن؟  
-</summary>  <p>  
-نحن في براند سعودي نؤمن بأن الجودة والثقة هما أساس نجاحنا. لذلك نحرص على اختيار منتجات مميزة بعناية، وتقديم أسعار مناسبة، وخدمة موثوقة، وتجربة تسوق سهلة وآمنة. هدفنا هو كسب رضا عملائنا من خلال المصداقية والاهتمام بأدق التفاصيل، لنكون خياركم الأول دائمًا. 💎🤝  
-</p>  </details>  <!-- طرق الدفع -->  <details>  <summary>  
-💳 طرق الدفع  
-</summary>  <p>  
-نوفر لعملائنا إمكانية الدفع بكل سهولة وأمان عبر الشام كاش (Sham Cash)  
-</p>  </details>  <!-- خدمة العملاء -->  <details>  <summary>  
-💬 خدمة العملاء  
-</summary>  <p>  
-للتواصل مع خدمة العملاء عبر واتساب:  
-</p>  <p>  <a  
-href="https://wa.me/963935142735"  
+</a>
+
+
+<!-- =========================
+     الأسئلة الشائعة
+========================= -->
+
+<section class="faq">
+
+<h2>
+الأسئلة الشائعة
+</h2>
+
+
+<!-- من نحن -->
+
+<details>
+
+<summary>
+🌟 من نحن؟
+</summary>
+
+<p>
+
+نحن في براند سعودي نؤمن بأن الجودة والثقة هما أساس نجاحنا. لذلك نحرص على اختيار منتجات مميزة بعناية، وتقديم أسعار مناسبة، وخدمة موثوقة، وتجربة تسوق سهلة وآمنة. هدفنا هو كسب رضا عملائنا من خلال المصداقية والاهتمام بأدق التفاصيل، لنكون خياركم الأول دائمًا. 💎🤝
+
+</p>
+
+</details>
+
+
+<!-- طرق الدفع -->
+
+<details>
+
+<summary>
+💳 طرق الدفع
+</summary>
+
+<p>
+
+نوفر لعملائنا إمكانية الدفع بكل سهولة وأمان عبر الشام كاش (Sham Cash)
+
+</p>
+
+</details>
+
+
+<!-- خدمة العملاء -->
+
+<details>
+
+<summary>
+💬 خدمة العملاء
+</summary>
+
+<p>
+للتواصل مع خدمة العملاء عبر واتساب:
+</p>
+
+<p>
+
+<a
+href="https://wa.me/963935142735"
 target="_blank">
 
 📱 +963 935 142 735
 
-</a>  </p>  <p>  
-أو عبر تيليجرام:  
-</p>  <p>  <a  
-href="https://t.me/hosamm455"  
+</a>
+
+</p>
+
+<p>
+أو عبر تيليجرام:
+</p>
+
+<p>
+
+<a
+href="https://t.me/hosamm455"
 target="_blank">
 
 ✈️ @hosamm455
 
-</a>  </p>  </details>  <!-- آراء العملاء -->  <details>  <summary>  
-⭐ آراء العملاء  
-</summary>  <p>  رأيك يهمنا ❤️
+</a>
+
+</p>
+
+</details>
+
+
+<!-- آراء العملاء -->
+
+<details>
+
+<summary>
+⭐ آراء العملاء
+</summary>
+
+<p>
+
+رأيك يهمنا ❤️
 
 <br><br>
 
@@ -784,341 +1184,476 @@ target="_blank">
 
 📩 لأي استفسار أو ملاحظة، تواصلوا معنا وسنكون سعداء بخدمتكم.
 
-</p>  </details>  </section>  <!-- =========================  
-     أزرار التواصل العائمة  
-========================= -->  <div class="floating-contact">  <!-- واتساب -->  <a  
-href="https://wa.me/963935142735"  
-class="floating-whatsapp"  
-target="_blank"  
+</p>
+
+</details>
+
+</section>
+
+
+<!-- =========================
+     صفحاتنا الرسمية
+========================= -->
+
+<section class="official-pages">
+
+<h2>
+صفحاتنا الرسمية
+</h2>
+
+<p>
+تابعونا عبر حساباتنا وقنواتنا الرسمية
+</p>
+
+
+<div class="official-links">
+
+
+<!-- Instagram -->
+
+<a
+href="https://www.instagram.com/ealamattijariatsaeudia?igsi=MTZxb2JlMzRhZDYxcw=="
+target="_blank"
+rel="noopener"
+class="official-link">
+
+<span class="official-icon">
+
+</span>
+💬
+<span>
+Instagram
+</span>
+
+</a>
+
+
+<!-- WhatsApp -->
+
+<a
+href="https://whatsapp.com/channel/0029VbCj55BLI8YcLtGb2x33"
+target="_blank"
+rel="noopener"
+class="official-link">
+
+<span class="official-icon">
+
+</span>
+💬
+<span>
+WhatsApp
+</span>
+
+</a>
+
+
+<!-- Telegram -->
+
+<a
+href="https://t.me/GulfLovers00"
+target="_blank"
+rel="noopener"
+class="official-link">
+
+<span class="official-icon">
+💬
+</span>
+
+<span>
+Telegram
+</span>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     أزرار التواصل العائمة
+========================= -->
+
+<div class="floating-contact">
+
+
+<!-- واتساب -->
+
+<a
+href="https://wa.me/963935142735"
+class="floating-whatsapp"
+target="_blank"
 aria-label="واتساب">
 
-<svg viewBox="0 0 24 24">  <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L.2 24l6.3-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 1 1 8.3 4.6Zm5.3-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.6.8.2 1.5.2 2.1.1.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.2-.2-.4-.3-.7-.4Z"/>  </svg>  </a>  <!-- تيليجرام -->  <a  
-href="https://t.me/hosamm455"  
-class="floating-telegram"  
-target="_blank"  
+<svg viewBox="0 0 24 24">
+
+<path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L.2 24l6.3-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.7 9.7 0 1 1 8.3 4.6Zm5.3-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.6 5.6 5 .8.3 1.4.5 1.9.6.8.2 1.5.2 2.1.1.7-.1 1.8-.7 2-1.4.2-.7.2-1.3.1-1.4-.2-.2-.4-.3-.7-.4Z"/>
+
+</svg>
+
+</a>
+
+
+<!-- تيليجرام -->
+
+<a
+href="https://t.me/hosamm455"
+class="floating-telegram"
+target="_blank"
 aria-label="تيليجرام">
 
-<svg viewBox="0 0 24 24">  <path d="M21.7 2.4 2.9 9.6c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.5c.2.5.1.7.6.7.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.3 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4ZM8.3 12.3l10.9-6.9c.5-.3 1-.1.6.2l-8.8 8-.3 3.1-1.4-4.4-1-.3Z"/>  </svg>  </a>  </div>  <!-- =========================  
-     صفحة البحث  
-========================= -->  <div  
-id="searchPage"  
-class="search-page">  <div class="search-top">  <button  
-id="closeSearch"  
-class="close-search"  
+<svg viewBox="0 0 24 24">
+
+<path d="M21.7 2.4 2.9 9.6c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 1.8 5.5c.2.5.1.7.6.7.4 0 .6-.2.8-.4l2.3-2.2 4.8 3.5c.9.5 1.5.3 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.7-1.4ZM8.3 12.3l10.9-6.9c.5-.3 1-.1.6.2l-8.8 8-.3 3.1-1.4-4.4-1-.3Z"/>
+
+</svg>
+
+</a>
+
+</div>
+
+
+<!-- =========================
+     صفحة البحث
+========================= -->
+
+<div
+id="searchPage"
+class="search-page">
+
+
+<div class="search-top">
+
+<button
+id="closeSearch"
+class="close-search"
 aria-label="رجوع">
 
 ←
 
-</button>  <div class="search-form">  <input
+</button>
+
+
+<div class="search-form">
+
+<input
 id="searchInput"
 class="search-input"
 type="text"
 placeholder="البحث في براند سعودي"
 autocomplete="off"
+>
 
-> 
 
-<button  
-id="searchSubmit"  
-class="search-submit"  
+<button
+id="searchSubmit"
+class="search-submit"
 aria-label="بحث">
 
 🔍
 
-</button>  </div>  </div>  <div  
-id="searchResult"  
-class="search-result">  
-</div>  </div>  <!-- =========================  
-     JavaScript  
-========================= -->  <script>  
-  
-  
-/* =========================  
-   القائمة الجانبية  
-========================= */  
-  
-const menuBtn =  
-document.getElementById("menuBtn");  
-  
-const sideMenu =  
-document.getElementById("sideMenu");  
-  
-  
-menuBtn.onclick = function(e){  
-  
-e.stopPropagation();  
-  
-sideMenu.classList.toggle("open");  
-  
-};  
-  
-  
-document.addEventListener("click", function(e){  
-  
-if(  
-!sideMenu.contains(e.target) &&  
-!menuBtn.contains(e.target)  
-){  
-  
-sideMenu.classList.remove("open");  
-  
-}  
-  
-});  
-  
-  
-/* =========================  
-   البحث  
-========================= */  
-  
-const searchBtn =  
-document.getElementById("searchBtn");  
-  
-const searchPage =  
-document.getElementById("searchPage");  
-  
-const closeSearch =  
-document.getElementById("closeSearch");  
-  
-const searchInput =  
-document.getElementById("searchInput");  
-  
-const searchSubmit =  
-document.getElementById("searchSubmit");  
-  
-const searchResult =  
-document.getElementById("searchResult");  
-  
-  
-/* فتح البحث */  
-  
-searchBtn.onclick = function(e){  
-  
-e.stopPropagation();  
-  
-sideMenu.classList.remove("open");  
-  
-searchPage.classList.add("active");  
-  
-setTimeout(function(){  
-  
-searchInput.focus();  
-  
-},200);  
-  
-};  
-  
-  
-/* إغلاق البحث */  
-  
-closeSearch.onclick = function(){  
-  
-searchPage.classList.remove("active");  
-  
-searchInput.value = "";  
-  
-searchResult.innerHTML = "";  
-  
-};  
-  
-  
-/* =========================  
-   الأقسام والمنتجات  
-========================= */  
-  
-const availableItems = [  
-  
-"براند سعودي",  
-  
-"عطور فرنسية",  
-  
-"عطور نسائية",  
-  
-"عطور رجالية",  
-  
-"عطور للجنسين",  
-  
-"زيوت عطرية",  
-  
-"بخور",  
-  
-"عود",  
-  
-"مسك",  
-  
-"أقمشة",  
-  
-"لوازم رحلات",  
-  
-"الإلكترونيات"  
-  
-];  
-  
-  
-/* =========================  
-   تنفيذ البحث  
-========================= */  
-  
-function doSearch(){  
-  
-const value =  
-searchInput.value.trim();  
-  
-  
-/* إذا لم يكتب شيئًا */  
-  
-if(value === ""){  
-  
-searchResult.innerHTML = "";  
-  
-return;  
-  
-}  
-  
-  
-/* البحث */  
-  
-const found =  
-availableItems.some(function(item){  
-  
-return item.includes(value) ||  
-value.includes(item);  
-  
-});  
-  
-  
-/* إذا كان موجودًا */  
-  
-if(found){  
-  
-searchResult.innerHTML =  
-  
-'<div class="search-success">✓ متوفر</div>';  
-  
-}  
-  
-  
-/* إذا لم يكن موجودًا */  
-  
-else{  
-  
-searchResult.innerHTML =  
-  
-'<div class="search-error">عذرًا، هذا المنتج أو القسم غير متوفر حاليًا.</div>';  
-  
-}  
-  
-}  
-  
-  
-/* الضغط على زر البحث */  
-  
-searchSubmit.onclick = function(){  
-  
-doSearch();  
-  
-};  
-  
-  
-/* الضغط على Enter */  
-  
-searchInput.addEventListener(  
-"keydown",  
-function(e){  
-  
-if(e.key === "Enter"){  
-  
-e.preventDefault();  
-  
-doSearch();  
-  
-}  
-  
-});  
-  
-  
-/* =========================  
-   سلة العطر وطلب واتساب  
-========================= */  
-  
-let quantity = 1;  
-  
-const quantityElement =  
-document.getElementById("quantity");  
-  
-const minusBtn =  
-document.getElementById("minusBtn");  
-  
-const plusBtn =  
-document.getElementById("plusBtn");  
-  
-const addCartBtn =  
-document.getElementById("addCartBtn");  
-  
-const cartMessage =  
-document.getElementById("cartMessage");  
-  
-const whatsappOrder =  
-document.getElementById("whatsappOrder");  
-  
-  
-/* زيادة العدد */  
-  
-plusBtn.onclick = function(){  
-  
-quantity++;  
-  
-quantityElement.textContent = quantity;  
-  
-};  
-  
-  
-/* إنقاص العدد */  
-  
-minusBtn.onclick = function(){  
-  
-if(quantity > 1){  
-  
-quantity--;  
-  
-quantityElement.textContent = quantity;  
-  
-}  
-  
-};  
-  
-  
-/* إضافة إلى السلة */  
-  
-addCartBtn.onclick = function(){  
-  
-cartMessage.classList.add("show");  
-  
-whatsappOrder.classList.add("show");  
-  
-whatsappOrder.textContent =  
-"📱 طلب عبر واتساب";  
-  
-};  
-  
-  
-/* إنشاء طلب واتساب */  
-  
-whatsappOrder.onclick = function(){  
-  
-const productName =  
-"عطر كليكات";  
-  
-const message =  
-"السلام عليكم، أريد طلب:%0A%0A" +  
-"🧴 المنتج: " + productName + "%0A" +  
-"🔢 العدد: " + quantity + "%0A%0A" +  
-"أرغب بتأكيد الطلب.";  
-  
-whatsappOrder.href =  
-"https://wa.me/963935142735?text=" + message;  
-  
-};  
-  
-  
-</script>  </body>  </html>
+</button>
+
+</div>
+
+</div>
+
+
+<div
+id="searchResult"
+class="search-result">
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script>
+
+
+/* =========================
+   القائمة الجانبية
+========================= */
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+
+menuBtn.onclick = function(e){
+
+e.stopPropagation();
+
+sideMenu.classList.toggle("open");
+
+};
+
+
+document.addEventListener("click",function(e){
+
+if(
+!sideMenu.contains(e.target) &&
+!menuBtn.contains(e.target)
+){
+
+sideMenu.classList.remove("open");
+
+}
+
+});
+
+
+/* =========================
+   البحث
+========================= */
+
+const searchBtn =
+document.getElementById("searchBtn");
+
+const searchPage =
+document.getElementById("searchPage");
+
+const closeSearch =
+document.getElementById("closeSearch");
+
+const searchInput =
+document.getElementById("searchInput");
+
+const searchSubmit =
+document.getElementById("searchSubmit");
+
+const searchResult =
+document.getElementById("searchResult");
+
+
+/* فتح البحث */
+
+searchBtn.onclick = function(e){
+
+e.stopPropagation();
+
+sideMenu.classList.remove("open");
+
+searchPage.classList.add("active");
+
+setTimeout(function(){
+
+searchInput.focus();
+
+},200);
+
+};
+
+
+/* إغلاق البحث */
+
+closeSearch.onclick = function(){
+
+searchPage.classList.remove("active");
+
+searchInput.value = "";
+
+searchResult.innerHTML = "";
+
+};
+
+
+/* =========================
+   الأقسام والمنتجات
+========================= */
+
+const availableItems = [
+
+"براند سعودي",
+
+"عطور فرنسية",
+
+"عطور نسائية",
+
+"عطور رجالية",
+
+"عطور للجنسين",
+
+"زيوت عطرية",
+
+"بخور",
+
+"عود",
+
+"مسك",
+
+"أقمشة",
+
+"لوازم رحلات",
+
+"الإلكترونيات"
+
+];
+
+
+/* =========================
+   تنفيذ البحث
+========================= */
+
+function doSearch(){
+
+const value =
+searchInput.value.trim();
+
+
+if(value === ""){
+
+searchResult.innerHTML = "";
+
+return;
+
+}
+
+
+const found =
+availableItems.some(function(item){
+
+return item.includes(value) ||
+value.includes(item);
+
+});
+
+
+if(found){
+
+searchResult.innerHTML =
+'<div class="search-success">✓ متوفر</div>';
+
+}
+
+else{
+
+searchResult.innerHTML =
+'<div class="search-error">عذرًا، هذا المنتج أو القسم غير متوفر حاليًا.</div>';
+
+}
+
+}
+
+
+searchSubmit.onclick = function(){
+
+doSearch();
+
+};
+
+
+searchInput.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Enter"){
+
+e.preventDefault();
+
+doSearch();
+
+}
+
+});
+
+
+/* =========================
+   سلة العطر وطلب واتساب
+========================= */
+
+let quantity = 1;
+
+const quantityElement =
+document.getElementById("quantity");
+
+const minusBtn =
+document.getElementById("minusBtn");
+
+const plusBtn =
+document.getElementById("plusBtn");
+
+const addCartBtn =
+document.getElementById("addCartBtn");
+
+const cartMessage =
+document.getElementById("cartMessage");
+
+const whatsappOrder =
+document.getElementById("whatsappOrder");
+
+
+/* زيادة العدد */
+
+plusBtn.onclick = function(){
+
+quantity++;
+
+quantityElement.textContent =
+quantity;
+
+};
+
+
+/* إنقاص العدد */
+
+minusBtn.onclick = function(){
+
+if(quantity > 1){
+
+quantity--;
+
+quantityElement.textContent =
+quantity;
+
+}
+
+};
+
+
+/* إضافة إلى السلة */
+
+addCartBtn.onclick = function(){
+
+cartMessage.classList.add("show");
+
+whatsappOrder.classList.add("show");
+
+whatsappOrder.textContent =
+"📱 طلب عبر واتساب";
+
+};
+
+
+/* إنشاء طلب واتساب */
+
+whatsappOrder.onclick = function(){
+
+const productName =
+"عطر كليكات";
+
+const message =
+"السلام عليكم، أريد طلب:%0A%0A" +
+"🧴 المنتج: " + productName + "%0A" +
+"🔢 العدد: " + quantity + "%0A%0A" +
+"أرغب بتأكيد الطلب.";
+
+whatsappOrder.href =
+"https://wa.me/963935142735?text=" +
+message;
+
+};
+
+
+</script>
+
+</body>
+
+</html>

@@ -401,6 +401,112 @@ font-size:19px;
 line-height:2;
 }
 
+
+/* =========================
+   صفحاتنا الرسمية
+========================= */
+
+.official-pages{
+
+padding:70px 20px 90px;
+
+text-align:center;
+
+background:#faf3eb;
+
+}
+
+.official-pages h2{
+
+font-size:40px;
+
+font-weight:900;
+
+margin-bottom:15px;
+
+color:#3b2115;
+
+}
+
+.official-pages p{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#806557;
+
+margin-bottom:35px;
+
+}
+
+.official-links{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.official-link{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+min-width:190px;
+
+padding:14px 25px;
+
+border-radius:15px;
+
+background:#fffaf5;
+
+border:2px solid #c9a875;
+
+color:#6b3c20;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:700;
+
+box-shadow:
+0 5px 15px rgba(59,33,21,.10);
+
+transition:.3s ease;
+
+}
+
+.official-link:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+0 8px 20px rgba(59,33,21,.16);
+
+background:#fff;
+
+}
+
+.official-icon{
+
+font-size:25px;
+
+}
+
+
 /* واتساب وتيليجرام */
 
 .floating-contact{
@@ -459,6 +565,7 @@ background:#70462d;
 .floating-telegram{
 background:#806557;
 }
+
 
 /* الجوال */
 
@@ -589,15 +696,17 @@ height:28px;
 
 }
 
+
 /* =========================
-بطاقات العطور - الجوال
+   بطاقات العطور - الجوال
 ========================= */
 
 @media (max-width:700px){
 
 .perfume-products{
 
-grid-template-columns:repeat(2,minmax(0,1fr));
+grid-template-columns:
+repeat(2,minmax(0,1fr));
 
 gap:12px;
 
@@ -685,8 +794,9 @@ margin-top:8px;
 
 }
 
+
 /* =========================
-زر طلب واتساب الثابت
+   زر طلب واتساب الثابت
 ========================= */
 
 .whatsapp-order-fixed{
@@ -741,6 +851,7 @@ background:#20bd5a;
 
 }
 
+
 /* الجوال */
 
 @media (max-width:700px){
@@ -758,6 +869,45 @@ height:55px;
 font-size:17px;
 
 border-radius:14px;
+
+}
+
+
+/* صفحاتنا الرسمية */
+
+.official-pages{
+
+padding:55px 15px 80px;
+
+}
+
+.official-pages h2{
+
+font-size:32px;
+
+}
+
+.official-pages p{
+
+font-size:16px;
+
+}
+
+.official-links{
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.official-link{
+
+width:100%;
+
+max-width:350px;
+
+font-size:17px;
 
 }
 
