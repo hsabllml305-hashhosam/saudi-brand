@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
+
 
 body{
 font-family:"Cairo",sans-serif;
@@ -13,7 +15,11 @@ background:#faf3eb;
 color:#3b2115;
 }
 
-/* المساحة الإعلانية */
+
+
+/* =========================
+   المساحة الإعلانية
+========================= */
 
 .ad-section{
 width:100%;
@@ -21,6 +27,7 @@ padding:15px 20px;
 background:#faf3eb;
 text-align:center;
 }
+
 
 .ad-banner{
 max-width:900px;
@@ -40,12 +47,14 @@ border-radius:12px;
 box-shadow:0 4px 12px rgba(59,33,21,.08);
 }
 
+
 .ad-banner h2{
 margin:0 0 3px;
 font-size:24px;
 font-weight:900;
 color:#6b3c20;
 }
+
 
 .ad-banner p{
 margin:0;
@@ -54,22 +63,31 @@ font-weight:600;
 color:#806557;
 }
 
-/* الهيدر */
+
+
+/* =========================
+   الهيدر
+========================= */
 
 header{
 height:80px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:0 35px;
 
 background:#fff;
+
 border-bottom:1px solid #eee;
 
 position:sticky;
 top:0;
+
 z-index:999;
 }
+
 
 .logo{
 font-size:32px;
@@ -77,23 +95,34 @@ font-weight:900;
 color:#3b2115;
 }
 
+
 .icons{
 display:flex;
+
 gap:18px;
+
 align-items:center;
+
 font-size:30px;
+
 color:#6b3c20;
 }
+
 
 #menuBtn,
 #searchBtn{
 cursor:pointer;
 }
 
-/* القائمة الجانبية */
+
+
+/* =========================
+   القائمة الجانبية
+========================= */
 
 .side-menu{
 position:fixed;
+
 top:0;
 right:-280px;
 
@@ -113,9 +142,11 @@ overflow-y:auto;
 z-index:1000;
 }
 
+
 .side-menu.open{
 right:0;
 }
+
 
 .side-menu a{
 display:block;
@@ -127,17 +158,23 @@ color:#4b2815;
 text-decoration:none;
 
 font-size:20px;
+
 font-weight:700;
 
 border-bottom:1px solid #eee;
 }
+
 
 .side-menu a:hover{
 background:#f8f3ee;
 color:#6b3c20;
 }
 
-/* الصفحة الرئيسية */
+
+
+/* =========================
+   الصفحة الرئيسية
+========================= */
 
 .hero{
 height:520px;
@@ -145,21 +182,27 @@ height:520px;
 background:#faf3eb;
 
 display:flex;
+
 align-items:center;
+
 justify-content:center;
 
 text-align:center;
 }
 
+
 .hero-text h1{
 font-size:65px;
+
 font-weight:900;
 
 margin-bottom:20px;
 }
 
+
 .hero-text p{
 font-size:28px;
+
 font-weight:600;
 
 color:#806557;
@@ -167,10 +210,12 @@ color:#806557;
 margin-bottom:35px;
 }
 
+
 .hero-btn{
 display:inline-flex;
 
 align-items:center;
+
 justify-content:center;
 
 background:#6b3c20;
@@ -182,98 +227,17 @@ padding:18px 45px;
 border-radius:18px;
 
 font-size:22px;
+
 font-weight:700;
 
 text-decoration:none;
 }
 
-/* البحث */
 
-.search-box{
-display:none;
 
-max-width:700px;
-
-margin:20px auto;
-
-padding:18px;
-
-background:#fffaf5;
-
-border:1px solid #e6d6c7;
-
-border-radius:18px;
-
-box-shadow:0 5px 18px rgba(59,33,21,.08);
-
-text-align:center;
-}
-
-.search-box.show{
-display:block;
-}
-
-.search-box input{
-width:70%;
-
-height:55px;
-
-padding:0 18px;
-
-border:1px solid #c9a875;
-
-border-radius:14px;
-
-outline:none;
-
-font-family:"Cairo",sans-serif;
-
-font-size:18px;
-
-color:#3b2115;
-}
-
-.search-box button{
-height:55px;
-
-padding:0 22px;
-
-margin-right:8px;
-
-border:0;
-
-border-radius:14px;
-
-background:#6b3c20;
-
-color:#fff;
-
-font-family:"Cairo",sans-serif;
-
-font-size:18px;
-
-font-weight:700;
-
-cursor:pointer;
-}
-
-#searchResult{
-margin-top:12px;
-
-font-size:18px;
-
-font-weight:700;
-}
-
-.available{
-color:#6b3c20;
-}
-
-.not-available{
-color:#806557;
-}
-
-/* المنتجات */
+/* =========================
+   المنتجات
+========================= */
 
 .products{
 padding:70px 50px;
@@ -283,6 +247,7 @@ min-height:520px;
 background:#faf3eb;
 }
 
+
 .products h2{
 font-size:42px;
 
@@ -291,15 +256,18 @@ font-weight:900;
 margin-bottom:45px;
 }
 
+
 .sorting label{
 font-size:22px;
 
 font-weight:bold;
 }
 
+
 .sorting + .sorting{
 margin-top:60px;
 }
+
 
 select{
 width:100%;
@@ -323,7 +291,212 @@ font-family:"Cairo",sans-serif;
 font-size:22px;
 }
 
-/* الأسئلة الشائعة */
+
+
+/* =========================
+   بطاقات المنتجات
+========================= */
+
+.perfume-products{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:55px;
+
+padding:0 10px;
+}
+
+
+.perfume-card{
+
+background:#fffaf5;
+
+border:1px solid #d8c2ad;
+
+border-radius:20px;
+
+padding:20px;
+
+text-align:center;
+
+box-shadow:
+0 5px 18px rgba(59,33,21,.08);
+
+width:100%;
+
+max-width:330px;
+
+margin:auto;
+}
+
+
+.perfume-image{
+
+width:100%;
+
+height:280px;
+
+object-fit:contain;
+
+border-radius:15px;
+
+background:#ffffff;
+
+display:block;
+
+margin:auto;
+}
+
+
+.perfume-name{
+
+font-size:23px;
+
+font-weight:900;
+
+color:#3b2115;
+
+margin:18px 0 12px;
+}
+
+
+.perfume-price{
+
+font-size:20px;
+
+font-weight:700;
+
+color:#806557;
+
+margin-bottom:15px;
+}
+
+
+
+/* =========================
+   التحكم بالعدد
+========================= */
+
+.quantity-box{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:15px;
+
+margin:15px 0;
+}
+
+
+.quantity-box button{
+
+width:40px;
+height:40px;
+
+border:1px solid #c9a875;
+
+border-radius:10px;
+
+background:#fff;
+
+color:#6b3c20;
+
+font-size:24px;
+
+font-weight:bold;
+
+cursor:pointer;
+}
+
+
+.quantity-box span{
+
+font-size:20px;
+
+font-weight:700;
+
+min-width:30px;
+}
+
+
+
+/* =========================
+   زر أضف إلى السلة
+========================= */
+
+.add-cart-btn{
+
+width:100%;
+
+padding:14px;
+
+border:0;
+
+border-radius:13px;
+
+background:#6b3c20;
+
+color:#fff;
+
+font-family:"Cairo",sans-serif;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s ease;
+}
+
+
+.add-cart-btn:hover{
+transform:translateY(-2px);
+}
+
+
+
+/* =========================
+   رسالة السلة
+========================= */
+
+.cart-message{
+
+display:none;
+
+margin-top:15px;
+
+padding:12px;
+
+background:#f8f3ee;
+
+border-radius:12px;
+
+color:#6b3c20;
+
+font-size:16px;
+
+font-weight:700;
+}
+
+
+.cart-message.show{
+display:block;
+}
+
+
+
+/* =========================
+   الأسئلة الشائعة
+========================= */
 
 .faq{
 padding:70px 20px;
@@ -334,6 +507,7 @@ margin:auto;
 
 background:#faf3eb;
 }
+
 
 .faq h2{
 text-align:center;
@@ -347,7 +521,9 @@ margin-bottom:35px;
 color:#3b2115;
 }
 
+
 .faq details{
+
 background:#fffaf5;
 
 border:1px solid #e6d6c7;
@@ -359,7 +535,9 @@ margin-bottom:18px;
 overflow:hidden;
 }
 
+
 .faq summary{
+
 list-style:none;
 
 cursor:pointer;
@@ -373,11 +551,14 @@ font-weight:700;
 color:#6b3c20;
 }
 
+
 .faq summary::-webkit-details-marker{
 display:none;
 }
 
+
 .faq summary::after{
+
 content:"+";
 
 float:left;
@@ -387,11 +568,14 @@ font-size:28px;
 font-weight:bold;
 }
 
+
 .faq details[open] summary::after{
 content:"−";
 }
 
+
 .faq p{
+
 padding:0 20px 20px;
 
 color:#555;
@@ -400,6 +584,14 @@ font-size:19px;
 
 line-height:2;
 }
+
+
+.faq a{
+color:#6b3c20;
+
+font-weight:bold;
+}
+
 
 
 /* =========================
@@ -413,8 +605,8 @@ padding:70px 20px 90px;
 text-align:center;
 
 background:#faf3eb;
-
 }
+
 
 .official-pages h2{
 
@@ -425,8 +617,8 @@ font-weight:900;
 margin-bottom:15px;
 
 color:#3b2115;
-
 }
+
 
 .official-pages p{
 
@@ -437,8 +629,8 @@ font-weight:600;
 color:#806557;
 
 margin-bottom:35px;
-
 }
+
 
 .official-links{
 
@@ -451,8 +643,8 @@ align-items:center;
 gap:18px;
 
 flex-wrap:wrap;
-
 }
+
 
 .official-link{
 
@@ -486,8 +678,8 @@ box-shadow:
 0 5px 15px rgba(59,33,21,.10);
 
 transition:.3s ease;
-
 }
+
 
 .official-link:hover{
 
@@ -497,19 +689,21 @@ box-shadow:
 0 8px 20px rgba(59,33,21,.16);
 
 background:#fff;
-
 }
+
 
 .official-icon{
-
 font-size:25px;
-
 }
 
 
-/* واتساب وتيليجرام */
+
+/* =========================
+   واتساب وتيليجرام
+========================= */
 
 .floating-contact{
+
 position:fixed;
 
 left:15px;
@@ -524,7 +718,9 @@ gap:8px;
 z-index:9999;
 }
 
+
 .floating-contact a{
+
 width:54px;
 height:54px;
 
@@ -533,6 +729,7 @@ border-radius:50%;
 display:flex;
 
 align-items:center;
+
 justify-content:center;
 
 text-decoration:none;
@@ -547,252 +744,30 @@ box-shadow:
 transition:.3s ease;
 }
 
+
 .floating-contact a:hover{
 transform:scale(1.08);
 }
 
+
 .floating-contact svg{
+
 width:29px;
 height:29px;
 
 fill:#fff;
 }
 
+
 .floating-whatsapp{
 background:#70462d;
 }
+
 
 .floating-telegram{
 background:#806557;
 }
 
-
-/* الجوال */
-
-@media (max-width:700px){
-
-header{
-height:70px;
-
-padding:0 18px;
-}
-
-.logo{
-font-size:25px;
-}
-
-.icons{
-font-size:28px;
-
-gap:15px;
-}
-
-.ad-section{
-padding:12px 12px;
-}
-
-.ad-banner{
-height:90px;
-
-border-radius:11px;
-
-padding:12px;
-}
-
-.ad-banner h2{
-font-size:21px;
-}
-
-.ad-banner p{
-font-size:13px;
-}
-
-.hero{
-height:420px;
-}
-
-.hero-text h1{
-font-size:50px;
-}
-
-.hero-text p{
-font-size:22px;
-}
-
-.hero-btn{
-padding:16px 35px;
-
-font-size:19px;
-}
-
-.search-box{
-margin:15px;
-
-padding:14px;
-}
-
-.search-box input{
-width:100%;
-
-margin-bottom:8px;
-}
-
-.search-box button{
-width:100%;
-
-margin-right:0;
-}
-
-.products{
-padding:60px 25px;
-}
-
-.products h2{
-font-size:38px;
-}
-
-.sorting label{
-font-size:20px;
-}
-
-select{
-height:70px;
-
-font-size:20px;
-}
-
-.faq{
-padding:55px 15px;
-}
-
-.faq h2{
-font-size:36px;
-}
-
-.faq summary{
-font-size:19px;
-}
-
-.faq p{
-font-size:17px;
-}
-
-.floating-contact{
-left:12px;
-bottom:12px;
-
-gap:7px;
-}
-
-.floating-contact a{
-width:52px;
-height:52px;
-}
-
-.floating-contact svg{
-width:28px;
-height:28px;
-}
-
-}
-
-
-/* =========================
-   بطاقات العطور - الجوال
-========================= */
-
-@media (max-width:700px){
-
-.perfume-products{
-
-grid-template-columns:
-repeat(2,minmax(0,1fr));
-
-gap:12px;
-
-padding:0;
-
-}
-
-.perfume-card{
-
-max-width:100%;
-
-padding:10px;
-
-border-radius:15px;
-
-}
-
-.perfume-image{
-
-height:180px;
-
-}
-
-.perfume-name{
-
-font-size:16px;
-
-margin:10px 0 7px;
-
-}
-
-.perfume-price{
-
-font-size:14px;
-
-margin-bottom:8px;
-
-}
-
-.quantity-box{
-
-gap:8px;
-
-margin:10px 0;
-
-}
-
-.quantity-box button{
-
-width:32px;
-
-height:32px;
-
-font-size:19px;
-
-}
-
-.quantity-box span{
-
-font-size:17px;
-
-min-width:22px;
-
-}
-
-.add-cart-btn{
-
-padding:10px 5px;
-
-font-size:14px;
-
-border-radius:10px;
-
-}
-
-.cart-message{
-
-font-size:12px;
-
-padding:8px;
-
-margin-top:8px;
-
-}
-
-}
 
 
 /* =========================
@@ -808,7 +783,6 @@ position:fixed;
 bottom:15px;
 
 left:15px;
-
 right:15px;
 
 height:58px;
@@ -836,25 +810,455 @@ box-shadow:0 5px 20px rgba(0,0,0,.25);
 z-index:99999;
 
 border:2px solid #fff;
-
 }
 
+
 .whatsapp-order-fixed.show{
+display:flex;
+}
+
+
+.whatsapp-order-fixed:hover{
+background:#20bd5a;
+}
+
+
+
+/* =========================
+   صفحة البحث
+========================= */
+
+.search-page{
+
+position:fixed;
+
+inset:0;
+
+z-index:99999;
+
+background:#ffffff;
+
+display:none;
+
+direction:rtl;
+}
+
+
+.search-page.active{
+display:block;
+}
+
+
+.search-top{
+
+height:75px;
+
+width:100%;
 
 display:flex;
 
+align-items:center;
+
+gap:10px;
+
+padding:10px 15px;
+
+background:#ffffff;
+
+border-bottom:1px solid #eeeeee;
+
+box-sizing:border-box;
 }
 
-.whatsapp-order-fixed:hover{
 
-background:#20bd5a;
+.close-search{
 
+width:45px;
+height:45px;
+
+border:0;
+
+background:transparent;
+
+color:#3b2115;
+
+font-size:32px;
+
+cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
 }
 
 
-/* الجوال */
+.search-form{
 
-@media (max-width:700px){
+flex:1;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+background:#f2f2f2;
+
+border:1px solid #dddddd;
+
+border-radius:28px;
+
+overflow:hidden;
+}
+
+
+.search-input{
+
+flex:1;
+
+height:100%;
+
+border:0;
+
+outline:none;
+
+background:transparent;
+
+padding:0 20px;
+
+font-size:18px;
+
+font-family:inherit;
+
+color:#333;
+
+direction:rtl;
+}
+
+
+.search-submit{
+
+width:58px;
+
+height:100%;
+
+border:0;
+
+background:#f2f2f2;
+
+font-size:22px;
+
+cursor:pointer;
+}
+
+
+.search-result{
+
+text-align:center;
+
+padding:60px 20px;
+
+font-size:21px;
+
+font-weight:bold;
+
+line-height:2;
+}
+
+
+.search-success{
+color:#6b3c20;
+}
+
+
+.search-error{
+color:#8a5a44;
+}
+
+
+
+/* =========================
+   الجوال
+========================= */
+
+@media(max-width:700px){
+
+header{
+
+height:70px;
+
+padding:0 18px;
+}
+
+
+.logo{
+font-size:25px;
+}
+
+
+.icons{
+
+font-size:28px;
+
+gap:15px;
+}
+
+
+.ad-section{
+padding:12px 12px;
+}
+
+
+.ad-banner{
+
+height:90px;
+
+border-radius:11px;
+
+padding:12px;
+}
+
+
+.ad-banner h2{
+font-size:21px;
+}
+
+
+.ad-banner p{
+font-size:13px;
+}
+
+
+.hero{
+height:420px;
+}
+
+
+.hero-text h1{
+font-size:50px;
+}
+
+
+.hero-text p{
+font-size:22px;
+}
+
+
+.hero-btn{
+
+padding:16px 35px;
+
+font-size:19px;
+}
+
+
+.products{
+padding:60px 25px;
+}
+
+
+.products h2{
+font-size:38px;
+}
+
+
+.sorting label{
+font-size:20px;
+}
+
+
+select{
+
+height:70px;
+
+font-size:20px;
+}
+
+
+.faq{
+padding:55px 15px;
+}
+
+
+.faq h2{
+font-size:36px;
+}
+
+
+.faq summary{
+font-size:19px;
+}
+
+
+.faq p{
+font-size:17px;
+}
+
+
+.floating-contact{
+
+left:12px;
+
+bottom:12px;
+
+gap:7px;
+}
+
+
+.floating-contact a{
+
+width:52px;
+height:52px;
+}
+
+
+.floating-contact svg{
+
+width:28px;
+height:28px;
+}
+
+
+
+/* =========================
+   عطرين بجانب بعض
+========================= */
+
+.perfume-products{
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:12px;
+
+padding:0;
+}
+
+
+.perfume-card{
+
+max-width:100%;
+
+padding:10px;
+
+border-radius:15px;
+}
+
+
+.perfume-image{
+
+height:180px;
+}
+
+
+.perfume-name{
+
+font-size:16px;
+
+margin:10px 0 7px;
+}
+
+
+.perfume-price{
+
+font-size:14px;
+
+margin-bottom:8px;
+}
+
+
+.quantity-box{
+
+gap:8px;
+
+margin:10px 0;
+}
+
+
+.quantity-box button{
+
+width:32px;
+
+height:32px;
+
+font-size:19px;
+}
+
+
+.quantity-box span{
+
+font-size:17px;
+
+min-width:22px;
+}
+
+
+.add-cart-btn{
+
+padding:10px 5px;
+
+font-size:14px;
+
+border-radius:10px;
+}
+
+
+.cart-message{
+
+font-size:12px;
+
+padding:8px;
+
+margin-top:8px;
+}
+
+
+
+/* البحث */
+
+.search-top{
+
+height:70px;
+
+padding:8px 10px;
+}
+
+
+.search-form{
+height:48px;
+}
+
+
+.search-input{
+
+font-size:16px;
+
+padding:0 16px;
+}
+
+
+.close-search{
+
+width:40px;
+
+height:40px;
+
+font-size:29px;
+}
+
+
+.search-submit{
+
+width:50px;
+
+font-size:20px;
+}
+
+
+
+/* واتساب */
 
 .whatsapp-order-fixed{
 
@@ -869,8 +1273,8 @@ height:55px;
 font-size:17px;
 
 border-radius:14px;
-
 }
+
 
 
 /* صفحاتنا الرسمية */
@@ -878,28 +1282,26 @@ border-radius:14px;
 .official-pages{
 
 padding:55px 15px 80px;
-
 }
+
 
 .official-pages h2{
-
 font-size:32px;
-
 }
+
 
 .official-pages p{
-
 font-size:16px;
-
 }
+
 
 .official-links{
 
 flex-direction:column;
 
 gap:12px;
-
 }
+
 
 .official-link{
 
@@ -908,7 +1310,6 @@ width:100%;
 max-width:350px;
 
 font-size:17px;
-
 }
 
 }
