@@ -1313,3 +1313,10 @@ font-size:17px;
 }
 
 }
+.brand-logo{
+    width:500px;
+    max-width:90%;
+    height:auto;
+    display:block;
+    margin:0 auto 25px;
+}
