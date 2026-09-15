@@ -1017,7 +1017,28 @@ message,
 
 </script>
 
+<div class="image-viewer" id="imageViewer">
+  <img id="viewerImage" src="" alt="">
+</div>
 
+<script>
+const imageViewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+
+document.querySelectorAll(".perfume-card img").forEach(function(img) {
+
+  img.addEventListener("click", function() {
+    viewerImage.src = this.src;
+    imageViewer.classList.add("active");
+  });
+
+});
+
+imageViewer.addEventListener("click", function() {
+  imageViewer.classList.remove("active");
+  viewerImage.src = "";
+});
+</script>
 </body>
 
 </html>

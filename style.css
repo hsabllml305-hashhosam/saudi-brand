@@ -1368,3 +1368,35 @@ img{
         max-width:100%;
     }
 }
+/* تكبير صور المنتجات */
+
+.perfume-card img {
+  cursor: pointer;
+}
+
+.image-viewer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.image-viewer.active {
+  display: flex;
+}
+
+.image-viewer img {
+  max-width: 90%;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
